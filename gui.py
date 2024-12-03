@@ -3,7 +3,7 @@ from tkinter import Tk, Label, Radiobutton, IntVar, Text, END
 
 class Gui:
 
-    title_text = "wire_cacl 0.0"
+    title_text = "wire_cacl 0.5"
 
     def u_radiobutton_command(self):
         print(self.u_text.get(1.0, END))
