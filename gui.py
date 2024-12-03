@@ -14,10 +14,10 @@ class Gui:
         self._window.geometry("500x300")
 
         self.p_label = Label(text="Мощность нагрузки, кВт")
-        self.p_label.grid(columnspan=1, rowspan=2, column=0, row=0)
+        self.p_label.grid(columnspan=2, rowspan=1, column=0, row=0)
 
         self.u_label = Label(text="Напряжение питания, В")
-        self.u_label.grid(columnspan=1, rowspan=2, column=0, row=2)
+        self.u_label.grid(columnspan=2, rowspan=1, column=0, row=2)
         self.u_radiobutton_position = IntVar(value=0)
         self.u_radiobutton1 = Radiobutton(
             text="Трехфазная сеть",
@@ -27,13 +27,13 @@ class Gui:
             text="Однофазная сеть",
             variable=self.u_radiobutton_position,
             value=1, command=self.u_radiobutton_command)
-        self.u_radiobutton1.grid(column=0, row=4)
-        self.u_radiobutton2.grid(column=0, row=5)
+        self.u_radiobutton1.grid(column=0, row=3)
+        self.u_radiobutton2.grid(column=0, row=4)
 
         self.cos_label = Label(text="Характеристика нагрузки, cos(fi)")
-        self.cos_label.grid(columnspan=1, rowspan=2, column=0, row=6)
+        self.cos_label.grid(columnspan=2, rowspan=1, column=0, row=5)
 
         self.length_label = Label(text="Длина кабеля, м")
-        self.length_label.grid(columnspan=1, rowspan=2, column=0, row=7)
+        self.length_label.grid(columnspan=2, rowspan=1, column=0, row=8)
 
         self._window.mainloop()
