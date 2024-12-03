@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Radiobutton, IntVar
+from tkinter import Tk, Label, Radiobutton, IntVar, Text, END
 
 
 class Gui:
@@ -6,13 +6,13 @@ class Gui:
     title_text = "wire_cacl 0.0"
 
     def u_radiobutton_command(self):
-        pass
+        print(self.u_text.get(1.0, END))
 
     def cos_radiobutton_command(self):
-        pass
+        print(self.cos_text.get(1.0, END))
 
     def length_radiobutton_command(self):
-        pass
+        print(self.length_text.get(1.0, END))
 
     def __init__(self):
         self._window = Tk()
@@ -37,6 +37,8 @@ class Gui:
             value=1, command=self.u_radiobutton_command)
         self.u_radiobutton1.grid(column=0, row=3)
         self.u_radiobutton2.grid(column=0, row=4)
+        self.u_text = Text(height=1, width=10)
+        self.u_text.grid(columnspan=1, rowspan=2, column=1, row=3)
 
         # Исходные данные по характеру нагрузки
         self.cos_label = Label(text="Характеристика нагрузки, cos(fi)")
@@ -52,6 +54,8 @@ class Gui:
             value=1, command=self.cos_radiobutton_command)
         self.cos_radiobutton1.grid(column=0, row=6)
         self.cos_radiobutton2.grid(column=0, row=7)
+        self.cos_text = Text(height=1, width=10)
+        self.cos_text.grid(columnspan=1, rowspan=2, column=1, row=6)
 
         # Исходные данные по кабелю
         self.length_label = Label(text="Длина кабеля, м")
@@ -67,5 +71,7 @@ class Gui:
             value=1, command=self.length_radiobutton_command)
         self.length_radiobutton1.grid(column=0, row=9)
         self.length_radiobutton2.grid(column=0, row=10)
+        self.length_text = Text(height=1, width=10)
+        self.length_text.grid(columnspan=1, rowspan=2, column=1, row=9)
 
         self._window.mainloop()
