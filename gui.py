@@ -22,6 +22,8 @@ class Gui:
         # Исходные данные по мощности
         self.p_label = Label(text="Мощность нагрузки, кВт")
         self.p_label.grid(columnspan=2, rowspan=1, column=0, row=0)
+        self.p_text = Text(height=1, width=10)
+        self.p_text.grid(columnspan=1, rowspan=1, column=1, row=1)
 
         # Исходные данные по напряжению
         self.u_label = Label(text="Напряжение питания, В")
