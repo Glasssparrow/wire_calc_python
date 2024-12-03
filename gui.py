@@ -1,4 +1,5 @@
 from tkinter import Tk, Label, Radiobutton, IntVar, Text, END, Button
+from calculation import calculate
 
 
 class Gui:
@@ -6,7 +7,7 @@ class Gui:
     title_text = "wire_cacl 0.5"
 
     def calculate(self):
-        pass
+        calculate()
 
     def u_radiobutton_command(self):
         print(self.u_text.get(1.0, END))
