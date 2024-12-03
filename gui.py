@@ -13,9 +13,11 @@ class Gui:
         self._window.title(self.title_text)
         self._window.geometry("500x300")
 
+        # Исходные данные по мощности
         self.p_label = Label(text="Мощность нагрузки, кВт")
         self.p_label.grid(columnspan=2, rowspan=1, column=0, row=0)
 
+        # Исходные данные по напряжению
         self.u_label = Label(text="Напряжение питания, В")
         self.u_label.grid(columnspan=2, rowspan=1, column=0, row=2)
         self.u_radiobutton_position = IntVar(value=0)
@@ -30,9 +32,11 @@ class Gui:
         self.u_radiobutton1.grid(column=0, row=3)
         self.u_radiobutton2.grid(column=0, row=4)
 
+        # Исходные данные по характеру нагрузки
         self.cos_label = Label(text="Характеристика нагрузки, cos(fi)")
         self.cos_label.grid(columnspan=2, rowspan=1, column=0, row=5)
 
+        # Исходные данные по кабелю
         self.length_label = Label(text="Длина кабеля, м")
         self.length_label.grid(columnspan=2, rowspan=1, column=0, row=8)
 
