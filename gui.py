@@ -1,9 +1,12 @@
-from tkinter import Tk, Label, Radiobutton, IntVar, Text, END
+from tkinter import Tk, Label, Radiobutton, IntVar, Text, END, Button
 
 
 class Gui:
 
     title_text = "wire_cacl 0.5"
+
+    def calculate(self):
+        pass
 
     def u_radiobutton_command(self):
         print(self.u_text.get(1.0, END))
@@ -104,5 +107,14 @@ class Gui:
         self.load_u_label.grid(columnspan=1, rowspan=1, column=3, row=4, sticky="W")
         self.load_u_text = Text(height=1, width=10)
         self.load_u_text.grid(columnspan=1, rowspan=1, column=4, row=4, sticky="W")
+
+        # Button
+        self.button = Button(
+                self._window, text="Выполнить расчет",
+                width= 36,
+                command=self.calculate,
+                bg="green",
+            )
+        self.button.grid(columnspan=2, rowspan=1, column=3, row=5, sticky="W")
 
         self._window.mainloop()
