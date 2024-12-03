@@ -1,5 +1,8 @@
 from tkinter import Tk, Label, Radiobutton, IntVar, Text, END, Button
-from calculation import calculate
+from calculation import (
+    calculate_load_current, calculate_max_cable_current,
+    calculate_cable_area, calculate_breaker_current, calculate_load_u,
+)
 
 
 class Gui:
@@ -41,7 +44,23 @@ class Gui:
         else:
             raise Exception(f"Случилось что-то странное.")
 
-        calculate(
+        load_current = calculate_load_current(
+            P=P, U=U, cos_fi=cos_fi, L=L,
+            phases=phases, load_type=load_type, cable_type=cable_type,
+        )
+        max_cable_current = calculate_max_cable_current(
+            P=P, U=U, cos_fi=cos_fi, L=L,
+            phases=phases, load_type=load_type, cable_type=cable_type,
+        )
+        cable_area = calculate_cable_area(
+            P=P, U=U, cos_fi=cos_fi, L=L,
+            phases=phases, load_type=load_type, cable_type=cable_type,
+        )
+        breaker_current = calculate_breaker_current(
+            P=P, U=U, cos_fi=cos_fi, L=L,
+            phases=phases, load_type=load_type, cable_type=cable_type,
+        )
+        load_u = calculate_load_u(
             P=P, U=U, cos_fi=cos_fi, L=L,
             phases=phases, load_type=load_type, cable_type=cable_type,
         )
