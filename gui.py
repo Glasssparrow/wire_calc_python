@@ -79,17 +79,27 @@ class Gui:
         # Результат
         self.load_current_label = Label(text="Ток нагрузки, А")
         self.load_current_label.grid(columnspan=1, rowspan=1, column=3, row=0)
+        self.load_current_text = Text(height=1, width=10)
+        self.load_current_text.grid(columnspan=1, rowspan=1, column=4, row=0)
 
         self.max_cable_current_label = Label(text="Ток нагрузки, А")
         self.max_cable_current_label.grid(columnspan=1, rowspan=1, column=3, row=1)
+        self.max_cable_current_text = Text(height=1, width=10)
+        self.max_cable_current_text.grid(columnspan=1, rowspan=1, column=4, row=1)
 
         self.s_label = Label(text="Ток нагрузки, А")
         self.s_label.grid(columnspan=1, rowspan=1, column=3, row=2)
+        self.s_text = Text(height=1, width=10)
+        self.s_text.grid(columnspan=1, rowspan=1, column=4, row=2)
 
         self.current_breaker_label = Label(text="Ток нагрузки, А")
         self.current_breaker_label.grid(columnspan=1, rowspan=1, column=3, row=3)
+        self.current_breaker_text = Text(height=1, width=10)
+        self.current_breaker_text.grid(columnspan=1, rowspan=1, column=4, row=3)
 
         self.load_u_label = Label(text="Ток нагрузки, А")
         self.load_u_label.grid(columnspan=1, rowspan=1, column=3, row=4)
+        self.load_u_text = Text(height=1, width=10)
+        self.load_u_text.grid(columnspan=1, rowspan=1, column=4, row=4)
 
         self._window.mainloop()
