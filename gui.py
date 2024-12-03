@@ -65,6 +65,17 @@ class Gui:
             phases=phases, load_type=load_type, cable_type=cable_type,
         )
 
+        self.load_current_text.delete(1.0, END)
+        self.load_current_text.insert(1.0, load_current)
+        self.max_cable_current_text.delete(1.0, END)
+        self.max_cable_current_text.insert(1.0, max_cable_current)
+        self.s_text.delete(1.0, END)
+        self.s_text.insert(1.0, cable_area)
+        self.current_breaker_text.delete(1.0, END)
+        self.current_breaker_text.insert(1.0, breaker_current)
+        self.load_u_text.delete(1.0, END)
+        self.load_u_text.insert(1.0, load_u)
+
     def u_radiobutton_command(self):
         print(self.u_text.get(1.0, END))
 
