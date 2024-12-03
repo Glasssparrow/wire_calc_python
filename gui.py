@@ -40,6 +40,7 @@ class Gui:
         self.u_radiobutton1.grid(column=0, row=3)
         self.u_radiobutton2.grid(column=0, row=4)
         self.u_text = Text(height=1, width=10)
+        self.u_text.insert(1.0, "380")
         self.u_text.grid(columnspan=1, rowspan=2, column=1, row=3)
 
         # Исходные данные по характеру нагрузки
@@ -57,6 +58,7 @@ class Gui:
         self.cos_radiobutton1.grid(column=0, row=6)
         self.cos_radiobutton2.grid(column=0, row=7)
         self.cos_text = Text(height=1, width=10)
+        self.cos_text.insert(1.0, "0.8")
         self.cos_text.grid(columnspan=1, rowspan=2, column=1, row=6)
 
         # Исходные данные по кабелю
@@ -74,6 +76,7 @@ class Gui:
         self.length_radiobutton1.grid(column=0, row=9)
         self.length_radiobutton2.grid(column=0, row=10)
         self.length_text = Text(height=1, width=10)
+        self.length_text.insert(1.0, "10")
         self.length_text.grid(columnspan=1, rowspan=2, column=1, row=9)
 
         # Результат
