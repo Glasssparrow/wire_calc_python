@@ -7,7 +7,7 @@ from calculation import (
 
 class Gui:
 
-    title_text = "wire_cacl 0.5"
+    title_text = "wire_cacl 0.8"
 
     @staticmethod
     def _check_input_from_user(user_input):
