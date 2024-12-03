@@ -10,4 +10,12 @@ class ErrorGui:
         self._window.title(self.title_text)
         self._window.geometry("300x100")
 
+        self.message_text = ""
+        for tuple_element in message_tuple:
+            self.message_text += tuple_element
+
+        # Сообщение об ошибке
+        self._error_text = Label(text=self.message_text)
+        self._error_text.grid(column=0, row=0)
+
         self._window.mainloop()
