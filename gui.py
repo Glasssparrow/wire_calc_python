@@ -11,7 +11,18 @@ class Gui:
 
     @staticmethod
     def _check_input_from_user(user_input):
-        return user_input
+        result = None
+        try:
+            result = float(user_input)
+        except ValueError:
+            Exception(f"{user_input} не является числом.")
+        except TypeError:
+            Exception(f"{user_input} не является строкой.")
+        except:
+            raise
+        if result is None:
+            raise Exception(f"Поле пустое")
+        return result
 
     def calculate(self):
         P = self.p_text.get(1.0)
