@@ -6,8 +6,45 @@ class Gui:
 
     title_text = "wire_cacl 0.5"
 
+    @staticmethod
+    def _check_input_from_user(user_input):
+        return user_input
+
     def calculate(self):
-        calculate()
+        P = self.p_text.get(1.0)
+        P = self._check_input_from_user(P)
+        U = self.u_text.get(1.0)
+        U = self._check_input_from_user(U)
+        cos_fi = self.cos_text.get(1.0)
+        cos_fi = self._check_input_from_user(cos_fi)
+        L = self.length_text.get(1.0)
+        L = self._check_input_from_user(L)
+        phases_radiobutton = self.u_radiobutton_position.get()
+        if phases_radiobutton == 0:
+            phases = 3
+        elif phases_radiobutton == 1:
+            phases = 1
+        else:
+            raise Exception(f"Случилось что-то странное.")
+        load_type_radiobutton = self.cos_radiobutton_position.get()
+        if load_type_radiobutton == 0:
+            load_type = "реактивная"
+        elif load_type_radiobutton == 1:
+            load_type = "активная"
+        else:
+            raise Exception(f"Случилось что-то странное.")
+        length_radiobutton = self.length_radiobutton_position.get()
+        if length_radiobutton == 0:
+            cable_type = "медь"
+        elif length_radiobutton == 1:
+            cable_type = "алюминий"
+        else:
+            raise Exception(f"Случилось что-то странное.")
+
+        calculate(
+            P=P, U=U, cos_fi=cos_fi, L=L,
+            phases=phases, load_type=load_type, cable_type=cable_type,
+        )
 
     def u_radiobutton_command(self):
         print(self.u_text.get(1.0, END))
