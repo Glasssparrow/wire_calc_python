@@ -5,7 +5,13 @@ def calculate_load_current(
         phases, load_type,
         cable_type,
 ):
-    return "load_current"
+    if phases == 3:
+        load_current = (P*1000)/((3**0.5)*cos_fi*U)
+    elif phases == 1:
+        load_current = (P*1000)/(cos_fi*U)
+    else:
+        raise Exception(f"Unexpected incident")
+    return load_current
 
 def calculate_max_cable_current(
         P, U, cos_fi, L,

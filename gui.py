@@ -22,16 +22,19 @@ class Gui:
             raise
         if result is None:
             raise Exception(f"Поле пустое")
+        if result == 0:
+            raise Exception(f"Мощность, напряжение, cos(fi) и длина кабеля "
+                            f"не должны быть = 0")
         return result
 
     def calculate(self):
-        P = self.p_text.get(1.0)
+        P = self.p_text.get(1.0, END)
         P = self._check_input_from_user(P)
-        U = self.u_text.get(1.0)
+        U = self.u_text.get(1.0, END)
         U = self._check_input_from_user(U)
-        cos_fi = self.cos_text.get(1.0)
+        cos_fi = self.cos_text.get(1.0, END)
         cos_fi = self._check_input_from_user(cos_fi)
-        L = self.length_text.get(1.0)
+        L = self.length_text.get(1.0, END)
         L = self._check_input_from_user(L)
         phases_radiobutton = self.u_radiobutton_position.get()
         if phases_radiobutton == 0:
