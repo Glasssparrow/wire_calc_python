@@ -3,6 +3,7 @@ from code.calculation import (
     calculate_load_current, calculate_max_cable_current,
     calculate_cable_area, calculate_breaker_current, calculate_load_u,
 )
+from code.data import COPPER, ALUMINIUM
 
 
 class Gui:
@@ -52,9 +53,9 @@ class Gui:
             raise Exception(f"Случилось что-то странное.")
         length_radiobutton = self.length_radiobutton_position.get()
         if length_radiobutton == 0:
-            cable_type = "медь"
+            cable_type = COPPER
         elif length_radiobutton == 1:
-            cable_type = "алюминий"
+            cable_type = ALUMINIUM
         else:
             raise Exception(f"Случилось что-то странное.")
 
