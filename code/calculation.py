@@ -45,7 +45,13 @@ def calculate_cable_area(
         phases, load_type,
         cable_type,
 ):
-    return "cable_area"
+    cable_current = calculate_max_cable_current(
+        P, U, cos_fi, L,
+        phases, load_type,
+        cable_type,
+    )
+    cable_area = get_cable_area(cable_current, cable_type)
+    return cable_area
 
 def calculate_load_u(
         P, U, cos_fi, L,

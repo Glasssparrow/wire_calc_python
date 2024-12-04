@@ -35,3 +35,24 @@ def get_cable_current(breaker_current, material):
         raise Exception(
             f"Не найден подходящий автомат."
         )
+
+def get_cable_area(cable_current, material):
+    cable_area = 0
+    if material == COPPER:
+        for cable in copper_low_voltage:
+            if cable[ТОК_ОТКРЫТО] == cable_current:
+                cable_area = cable[СЕЧЕНИЕ]
+                break
+    elif material == ALUMINIUM:
+        for cable in aluminium_low_voltage:
+            if cable[ТОК_ОТКРЫТО] == cable_current:
+                cable_area = cable[СЕЧЕНИЕ]
+                break
+    else:
+        raise Exception("unexpected incident")
+    if cable_area != 0:
+        return cable_area
+    else:
+        raise Exception(
+            f"Не найден подходящий автомат."
+        )
