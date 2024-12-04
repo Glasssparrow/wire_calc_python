@@ -1,3 +1,4 @@
+from .choose_from_data import *
 
 
 def calculate_load_current(
@@ -23,7 +24,8 @@ def calculate_breaker_current(
         phases, load_type,
         cable_type,
     )
-    return "breaker_current"
+    breaker_current = get_beaker_current(load_current)
+    return breaker_current
 
 def calculate_max_cable_current(
         P, U, cos_fi, L,
