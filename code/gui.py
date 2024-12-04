@@ -1,5 +1,5 @@
 from tkinter import Tk, Label, Radiobutton, IntVar, Text, END, Button
-from calculation import (
+from code.calculation import (
     calculate_load_current, calculate_max_cable_current,
     calculate_cable_area, calculate_breaker_current, calculate_load_u,
 )
