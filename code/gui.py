@@ -24,7 +24,7 @@ class Gui:
             raise Exception(f"Поле пустое")
         if result == 0:
             raise Exception(f"Мощность, напряжение, cos(fi) и длина кабеля "
-                            f"не должны быть = 0")
+                            f"не должны быть равны нулю.")
         return result
 
     def calculate(self):
