@@ -1,4 +1,4 @@
-from data import *
+from .data import *
 
 
 def get_beaker_current(load_current):
